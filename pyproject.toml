@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mischief"
+version = "0.1.0"
+description = "Pick a voice once and use it in your messages, calls and games. Uses VoiceStudio as its voice engine."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31"]
+
+[project.optional-dependencies]
+live = ["sounddevice>=0.4.6", "numpy>=1.26"]
+dev = ["pytest>=8", "numpy>=1.26"]
+
+[project.scripts]
+mischief = "mischief.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mischief*"]
